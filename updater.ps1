@@ -3,6 +3,13 @@ Invoke-WebRequest "https://raw.githubusercontent.com/Jasperwolsing/PSdartsscorer
 $version = Get-Content C:\temp\repository.version
 
 $installedversion = Get-Content C:\Scorebord\installed.version -ErrorAction SilentlyContinue
+
+$updaterun1 = Get-Content C:\Scorebord\installed.runone
+if($updaterun1)
+{
+    Clear-Variable installedversion
+}
+
 if(!$installedversion -and $installedversion -lt $version)
 {
     $URLupdater = "https://raw.githubusercontent.com/Jasperwolsing/PSdartsscorer/master/updater.ps1"
@@ -24,6 +31,14 @@ if(!$installedversion -and $installedversion -lt $version)
     #>
 
     Echo $version > C:\Scorebord\installed.version
+    IF($updaterun1)
+    {
+        Remove-Item C:\Scorebord\installed.runone -Force
+    }
+    Else
+    {
+        Echo $version > C:\Scorebord\installed.runone
+    }
 }
 
 
