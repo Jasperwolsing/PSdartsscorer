@@ -17,10 +17,11 @@ if(!$installedversion -and $installedversion -lt $version)
     $url2location = "C:\scorebord\possible-outs.csv"   
     Invoke-WebRequest $URL2 -OutFile $url2location
 
+    <#
     $URL3 = "https://raw.githubusercontent.com/Jasperwolsing/PSdartsscorer/master/possible-outs-check.ps1"
     $url3location = "C:\scorebord\Possible-outs-check.ps1"   
     Invoke-WebRequest $URL3 -OutFile $url3location
-
+    #>
 
     Echo $version > C:\Scorebord\installed.version
 }
