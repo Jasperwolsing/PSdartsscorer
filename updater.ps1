@@ -7,11 +7,20 @@ if(!$installedversion -and $installedversion -lt $version)
 {
     $URLupdater = "https://raw.githubusercontent.com/Jasperwolsing/PSdartsscorer/master/updater.ps1"
     $updaterlocation = "C:\Scorebord\updater.ps1" 
-    $URL1 = "https://raw.githubusercontent.com/Jasperwolsing/PSdartsscorer/master/Scorebord.ps1"
-    $url1location = "C:\scorebord\scorebord.ps1"
-
     Invoke-WebRequest $URLupdater -OutFile $updaterlocation
+
+    $URL1 = "https://raw.githubusercontent.com/Jasperwolsing/PSdartsscorer/master/Scorebord.ps1"
+    $url1location = "C:\scorebord\scorebord.ps1"   
     Invoke-WebRequest $URL1 -OutFile $url1location
+
+    $URL2 = "https://raw.githubusercontent.com/Jasperwolsing/PSdartsscorer/master/possible-outs.csv"
+    $url2location = "C:\scorebord\possible-outs.csv"   
+    Invoke-WebRequest $URL2 -OutFile $url2location
+
+    $URL3 = "https://raw.githubusercontent.com/Jasperwolsing/PSdartsscorer/master/possible-outs-check.ps1"
+    $url3location = "C:\scorebord\Possible-outs-check.ps1"   
+    Invoke-WebRequest $URL3 -OutFile $url3location
+
 
     Echo $version > C:\Scorebord\installed.version
 }
