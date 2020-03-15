@@ -44,7 +44,7 @@ Function run-possible-out
     {
         IF($WPFscoreUit.Content -le 170)
         {
-            $WPFInstructions.Content =  Possible-out -score $($WPFStatusUIT.content)
+            $WPFInstructions.Content =  Possible-out -score $($WPFscoreUit.content)
         }
         Else
         {
@@ -107,11 +107,25 @@ function Calc-is
 
 Function new-game
 {
-    $WPFScoreThuis.Content = 501
-    $WPFScoreUIT.content = 501
-    $WPFStatusThuis.Visibility = "Visible"
-    $WPFStatusUIT.Visibility = "Hidden"
-    $WPFInstructions.Content = "Thuis mag beginnen aan de wedstrijd"
+    $lastone = Get-Content C:\Scorebord\laststarter.txt
+    IF($lastone -like "uit" -or !$lastone)
+    {
+        $WPFScoreThuis.Content = 501
+        $WPFScoreUIT.content = 501
+        $WPFStatusThuis.Visibility = "Visible"
+        $WPFStatusUIT.Visibility = "Hidden"
+        $WPFInstructions.Content = "Thuis mag beginnen aan de wedstrijd"
+        Echo Thuis > C:\Scorebord\laststarter.txt
+    }
+    else
+    {
+        $WPFScoreThuis.Content = 501
+        $WPFScoreUIT.content = 501
+        $WPFStatusThuis.Visibility = "Hidden"
+        $WPFStatusUIT.Visibility = "Visible"
+        $WPFInstructions.Content = "Uit mag beginnen"
+        Echo uit > C:\Scorebord\laststarter.txt
+    }
 
 }
 
