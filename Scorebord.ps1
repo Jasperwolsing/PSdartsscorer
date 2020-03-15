@@ -42,7 +42,7 @@ Function run-possible-out
     }
     Else
     {
-        IF($WPFStatusUIT.Content -le 170)
+        IF($WPFscoreUit.Content -le 170)
         {
             $WPFInstructions.Content =  Possible-out -score $($WPFStatusUIT.content)
         }
