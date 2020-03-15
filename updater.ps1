@@ -10,6 +10,8 @@ if(!$installedversion -and $installedversion -lt $version)
     $URL1 = "https://raw.githubusercontent.com/Jasperwolsing/PSdartsscorer/master/Scorebord.ps1"
     $url1location = "C:\scorebord\scorebord.ps1"
 
+    Invoke-WebRequest $URLupdater -OutFile $updaterlocation
+    Invoke-WebRequest $URL1 -OutFile $url1location
 
     Echo $version > C:\Scorebord\installed.version
 }
