@@ -147,7 +147,7 @@ $inputXML = @"
         <Button x:Name="knop2" Content="2" VerticalAlignment="Top" Height="93" Margin="886,693,886,0" Background="#FF535552" Foreground="White" FontFamily="Impact" FontSize="38"/>
         <Button x:Name="knop3" Content="3" VerticalAlignment="Top" Height="93" Margin="1038,693,734,0" Background="#FF535552" Foreground="White" FontFamily="Impact" FontSize="38"/>
         <Button x:Name="knop1" Content="1" VerticalAlignment="Top" Height="93" Margin="734,693,1038,0" Background="#FF535552" Foreground="White" FontFamily="Impact" FontSize="38"/>
-        <Label x:Name="Instructions" Content="" HorizontalAlignment="Left" Margin="734,589,0,0" VerticalAlignment="Top" Width="452" Height="100" Background="#FF2B2727" Foreground="White" FontFamily="Impact" FontSize="24"/>
+        <Label x:Name="Instructions" Content="" HorizontalAlignment="Left" Margin="734,589,0,0" VerticalAlignment="Top" Width="452" Height="100" Background="#FF2B2727" Foreground="White" FontFamily="Impact" FontSize="32"/>
         <Label x:Name="numbercount" Content="0" HorizontalAlignment="Left" Margin="743,639,0,0" VerticalAlignment="Top" Width="434" Height="50" Background="#FF554646" HorizontalContentAlignment="Center" FontFamily="Impact" FontSize="36" Foreground="White"/>
         <Ellipse x:Name="StatusThuis" Fill="#FF41E810" HorizontalAlignment="Left" Height="56" Margin="285,149,0,0" Stroke="White" VerticalAlignment="Top" Width="60"/>
         <Ellipse x:Name="StatusUIT" Fill="#FF41E810" HorizontalAlignment="Left" Height="56" Margin="1485,149,0,0" Stroke="White" VerticalAlignment="Top" Width="60"/>
@@ -159,7 +159,6 @@ $inputXML = @"
 
     </Grid>
 </Window>
-
 
 "@       
  
