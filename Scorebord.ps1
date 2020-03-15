@@ -236,6 +236,7 @@ $WPFknop9.add_Click({
 $WPFknopOK.add_click({
     Set-score
     clear-numbercount
+    run-possible-out
 })
 
 $WPFknopNew.add_Click({
