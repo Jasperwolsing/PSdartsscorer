@@ -1,3 +1,15 @@
+$PossibleOutList = Get-Content C:\Scorebord\possible-outs.csv | ConvertFrom-Csv -Delimiter ";"
+
+Function Possible-out
+{
+    Param
+    (
+        [string]$score
+    )
+    $possibleout = $PossibleOutList | select Score, Display | where {$_.Score -eq $score}
+    $possibleout.Display
+}
+
 function set-count
 {
     param
@@ -13,6 +25,32 @@ function set-count
         $WPFnumbercount.content = [string]$WPFnumbercount.Content + [string]$count
     }
 
+}
+
+Function run-possible-out
+{
+    IF($WPFStatusThuis.Visibility -like "Visible")
+    {
+        IF($WPFScoreThuis.Content -le 170)
+        {
+            $WPFInstructions.Content =  Possible-out -score $($WPFScoreThuis.Content)
+        }
+        Else
+        {
+            $WPFInstructions.Content =  "Thuis mag gooien"
+        }
+    }
+    Else
+    {
+        IF($WPFStatusUIT.Content -le 170)
+        {
+            $WPFInstructions.Content =  Possible-out -score $($WPFStatusUIT.content)
+        }
+        Else
+        {
+            $WPFInstructions.Content =  "Uit mag gooien"
+        }
+    }
 }
 
 Function Set-score
