@@ -1,3 +1,8 @@
+while (!$Connect)
+{
+    $Connect = Test-Connection 8.8.8.8
+}
+
 $versionURL = "https://raw.githubusercontent.com/Jasperwolsing/PSdartsscorer/master/currentversion.txt"
 Invoke-WebRequest "https://raw.githubusercontent.com/Jasperwolsing/PSdartsscorer/master/currentversion.txt" -OutFile C:\Temp\repository.version
 $version = Get-Content C:\temp\repository.version
